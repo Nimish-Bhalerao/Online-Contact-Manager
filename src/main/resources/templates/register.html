@@ -39,6 +39,7 @@
             method="post"
             data-th-object="${userForm}"
             class="mt-6"
+        novalidate
           >
             <!--name-->
             <div class="mb-5">
@@ -54,7 +55,11 @@
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Enter here"
                 required
-              />
+              />  
+              <p
+              data-th-if="${#fields.hasErrors('name')}"
+              data-th-errors="*{name}"
+               class="text-red-500 px-1 py-2">*Name is required</p>
             </div>
 
             <!--mail-->
@@ -72,6 +77,11 @@
                 placeholder="name@flowbite.com"
                 required
               />
+              
+              <p
+              data-th-if="${#fields.hasErrors('email')}"
+              data-th-errors="*{email}"
+               class="text-red-500 px-1 py-2"></p>
             </div>
 
             <!--password-->
@@ -89,6 +99,11 @@
                 placeholder=""
                 required
               />
+              
+              <p
+              data-th-if="${#fields.hasErrors('password')}"
+              data-th-errors="*{password}"
+               class="text-red-500 px-1 py-2"></p>
             </div>
 
             <!--phonenumber-->
@@ -105,6 +120,11 @@
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required
               />
+              
+              <p
+              data-th-if="${#fields.hasErrors('phoneNumber')}"
+              data-th-errors="*{phoneNumber}"
+               class="text-red-500 px-1 py-2"></p>
             </div>
 
             <!--about textarea-->
@@ -121,6 +141,11 @@
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Some Information about your contact..."
               ></textarea>
+              
+              <p
+              data-th-if="${#fields.hasErrors('about')}"
+              data-th-errors="*{about}"
+               class="text-red-500 px-1 py-2"></p>
             </div>
 
             <!--buttons -->
